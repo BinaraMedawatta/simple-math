@@ -1,0 +1,26 @@
+{
+  "name": "@binara_medawatta/simple_math",
+  "version": "1.0.1",
+  "description": "Contains simple mathematical functions",
+  "main": "simple_math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BinaraMedawatta/simple-math.git"
+  },
+  "keywords": [
+    "Mathematics",
+    "Prime",
+    "Odd",
+    "Even",
+    "Factorial"
+  ],
+  "author": "Binara Medawatta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BinaraMedawatta/simple-math/issues"
+  },
+  "homepage": "https://github.com/BinaraMedawatta/simple-math#readme"
+}
