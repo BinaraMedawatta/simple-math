@@ -1,6 +1,6 @@
 {
   "name": "@binara_medawatta/simple_math",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Contains simple mathematical functions",
   "main": "simple_math.js",
   "scripts": {
@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/BinaraMedawatta/simple-math/issues"
   },
-  "homepage": "https://github.com/BinaraMedawatta/simple-math#readme"
+  "homepage": "https://github.com/BinaraMedawatta/simple-math#readme",
+  "type": "module"
 }
