@@ -11,7 +11,7 @@ export function isOdd(x) {
  * @param {number} x Number to be tested
  */
 export function isPrime(x) {
-  for (var i = 2; i <= x / 2; i++) if (x % i == 0) return false;
+  for (var i = 2; i <= Math.sqrt(x); i++) if (x % i == 0) return false;
   return true;
 }
 
@@ -42,7 +42,16 @@ export function factorial(x) {
 export function primesLessThanX(x) {
   var primes = [];
   for (var j = 2; j < x; j++) {
-    if (isPrime(j)) primes.push(j);
+    var isPrime = true;
+    for (var k = 0; k < primes.length; k++) {
+      if (j % primes[k] == 0) {
+        isPrime = false;
+        break;
+      }
+    }
+    if (isPrime) {
+      primes.push(j);
+    }
   }
   return primes;
 }
@@ -55,12 +64,14 @@ export function primesLessThanX(x) {
  * @param {boolean} i_y Including upper bound
  */
 export function primesBetweenXandY(x, y, i_x = false, i_y = false) {
-  var primes = [];
-  first = i_x ? x : x + 1;
-  last = i_y ? y + 1 : y;
-  for (var j = first; j < last; j++) {
-    if (isPrime(j)) primes.push(j);
+  var lower_bound = i_x ? x - 1 : x;
+  var upper_bound = i_y ? y + 1 : y;
+  var primes = primesLessThanX(upper_bound);
+
+  while (primes.length && primes[0] < lower_bound) {
+    primes.splice(0, 1);
   }
+
   return primes;
 }
 
