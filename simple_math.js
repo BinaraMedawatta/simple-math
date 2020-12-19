@@ -122,5 +122,3 @@ export function repeatedPermutations(n, r) {
 
   return factorial(n) / r_i;
 }
-
-console.log(repeatedPermutations(4, [2]));
