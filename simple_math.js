@@ -89,3 +89,38 @@ export function primeFactorsOfX(x) {
   }
   return out;
 }
+
+/**
+ * Returns the number of permutations of n things taken r at a time (order matters)
+ * @param {number} n Total numebr of objects
+ * @param {number} r Number of objects taken at a time
+ */
+export function permutations(n, r) {
+  return factorial(n) / factorial(n - r);
+}
+
+/**
+ * Returns the number of combinations of n objects taken r at a time (order does not matter)
+ * @param {*} n Total number of objects
+ * @param {*} r Number of objects taken at a time
+ */
+export function combinations(n, r) {
+  return factorial(n) / (factorial(n - r) * factorial(r));
+}
+
+/**
+ * Returns the number of different permutations of n objects where there are n1 repeated items, n2 repeated items, ... nk repeated items
+ * @param {number} n Total number of objects
+ * @param {Array} r Repeated numbers array
+ */
+export function repeatedPermutations(n, r) {
+  var r_i = 1;
+  var i;
+  for (i in r) {
+    r_i *= factorial(r[i]);
+  }
+
+  return factorial(n) / r_i;
+}
+
+console.log(repeatedPermutations(4, [2]));
